@@ -62,3 +62,7 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+Introduction to JSX
+---------------------
+JSX (Java Script XML)= HTML code inside JavaScript
