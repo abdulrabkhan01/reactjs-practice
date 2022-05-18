@@ -81,4 +81,7 @@ App (Rendered directly into single HTML page using ReactDOM.createRoot)
          Component2Child1...n
   Componentn
 
- 
+ Using CSS
+ ---------
+ Create the css file for the component in the same directory where component is defined and import it
+ into the component using the import keyword
