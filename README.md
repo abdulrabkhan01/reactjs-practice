@@ -10,7 +10,10 @@ It uses Declarative approach instead of imperative
 
 Component:
 --------------
-Build using HTML, CSS and JS
+Build using HTML, CSS and JS, a Component in React is just a JavaScript function.
+They are just functions that return the html code.
+Custom component will always uses Upper Case names (camel notation) unlike html defined components.
+Like App, CustomItem etc.
 
 Create React App
 ----------------
@@ -66,3 +69,16 @@ root.render(
 Introduction to JSX
 ---------------------
 JSX (Java Script XML)= HTML code inside JavaScript
+
+Component Hierarchy in React
+---------------------------
+App component is the root of other custom components
+Example
+App (Rendered directly into single HTML page using ReactDOM.createRoot)
+  Component1
+        Component1Child1...n
+  Component2
+         Component2Child1...n
+  Componentn
+
+ 
