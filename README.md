@@ -85,3 +85,11 @@ App (Rendered directly into single HTML page using ReactDOM.createRoot)
  ---------
  Create the css file for the component in the same directory where component is defined and import it
  into the component using the import keyword
+
+ To use variable values inside the components
+ ------------------------------------------------
+ Use {} to evaluate any java code inside the components
+
+ Passing data to component
+ --------------------------
+ props (Key value pairs are used to pass data to the child component from the root app component)

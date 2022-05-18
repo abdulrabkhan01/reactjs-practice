@@ -1,11 +1,11 @@
 import './Item.css';
-function Item() {
+function Item(props) {
     return (
         <div class="root">
-            <div>Date</div>
+            <div>{props.label}</div>
             <div>
-                <h2>20-Jan-2022</h2>
-                <div>Rs. 786</div>
+                <h2>{props.date.toISOString()}</h2>
+                <div>{props.price}</div>
             </div>
         </div>
 
