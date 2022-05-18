@@ -1,7 +1,7 @@
 import './Item.css';
 function Item(props) {
     return (
-        <div class="root">
+        <div className="root">
             <div>{props.label}</div>
             <div>
                 <h2>{props.date.toISOString()}</h2>
