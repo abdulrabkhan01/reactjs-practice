@@ -17,7 +17,7 @@ function App() {
   ];
   return ( 
     <div>
-      <h1> Hello Ark </h1>
+      <h1> Available Items </h1>
       <Item
        label={items[0].label}
        date={items[0].date}
