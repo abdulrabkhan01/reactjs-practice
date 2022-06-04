@@ -257,4 +257,16 @@ B-Update -> State or props of a component changes
     a-render
     b-componentDidUpdate
 C-Unmount: Component removed from the DOM
-    a- componentWillUnmount
+    a- componentWillUnmount -will be called just before the component removed from the DOM, used for cleanup
+
+
+Angular vs React Vs Vue
+-----------------------------
+Angular JS: Year 2010 (By Google) | Framework
+Angualr2 : Year 2016 - Complete Rewrite of Angular JS | Framework | High Learning Curve | Two Way Data Binding |Major Updates Every 6 months (Breaking Changes) |More Popular than Angular in Github
+React: 2013 (By Facebook) | Library | Few features so less learning curve | One Way Data Binding |Stable
+Vue: 2013 | Framework |Git Hub More popular than React and Angular
+
+GFG Link below for the difference
+https://www.geeksforgeeks.org/difference-between-angular-2-and-reactjs/#:~:text=Angular%202%20is%20an%20open,user%20interface%20of%20an%20application.
+
