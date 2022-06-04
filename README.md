@@ -270,3 +270,83 @@ Vue: 2013 | Framework |Git Hub More popular than React and Angular
 GFG Link below for the difference
 https://www.geeksforgeeks.org/difference-between-angular-2-and-reactjs/#:~:text=Angular%202%20is%20an%20open,user%20interface%20of%20an%20application.
 
+--------------------------
+REACT ADVANCE TOPICS
+--------------------------
+
+React Router : Library build on top of react uesd for Single Page Web Applications, used to define routes
+------------
+
+Three different packages:
+-------------------------
+a- react-router: core routing components
+b- react-router-native: for mobile apps
+c- react-router-dom: web apps
+
+npm install react-router-dom --save   
+
+Types of Router Components:
+
+a- <BrowserRouter> -> for Dynamic URL
+b- <HashRouter> -> for Static URL
+
+Example: index.js
+
+const routing = (  
+  <Router>  
+    <div>  
+      <h1>React Router Example</h1>  
+      <Route path="/" component={MyApp} />  
+      <Route path="/about" component={AboutComponent} />  
+      <Route path="/contact" component={ContactComponent} />  
+    </div>  
+  </Router>  
+)  
+
+How to call HTTP End Points using React
+------------------------------------------
+Use any of the APIs below
+a) XmlHttpRequest
+b) Axios
+c) Windows fetch
+
+npm install –save axios
+import Axios from ‘axios’;
+
+Axios.get(‘url’).then((response)=>{console.log(response)});
+
+postdata=()=>{
+   const postObject={
+      //values
+   }
+   Axios.post(‘url’, postObject).then(response=>{ //process the response});
+}
+
+deleteData=()=>{
+   Axios.delete(‘url’).then(response=>{});
+}
+
+Refer below link for more details
+
+https://www.tutorialspoint.com/making-http-request-in-react-js
+
+
+What is React Flux
+-------------------
+It is architecture pattern for building react apps.
+Components Fire of actions and listen to stores
+Store more of like a angular service
+Actions do only one thing, pipe the actions to dispather, Action might create multiple actions
+Dispatcher is a pattern of pub-sub  (differnce is event sends to all stores)
+
+https://www.youtube.com/watch?v=PvjNglsyOHs
+https://www.javatpoint.com/react-flux-concept#:~:text=Flux%20is%20an%20application%20architecture,of%20Unidirectional%20Data%20Flow%20model.
+
+What is React Redux
+--------------------
+https://react-redux.js.org/tutorials/quick-start
+
+Used for app state management, it is a state container for js apps, it provides the single source of truth
+, single global object Store, the state of whole application is stored in an object tree with single store. Also the state is read only
+it can only be updated by emitting the actions.
+
