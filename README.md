@@ -246,5 +246,15 @@ function App() {
   );
 }
 
-Q1- When to extend ReactJS.Component? Just complete full youtube course and then we will think.
-
+Life cycle hooks
+-------------------
+A- Mount Phase-> Component is created and added to the DOM
+    Life cycle hooks (Called in below sequence)
+    a-constructor
+    b-render
+    c-componentDidMount
+B-Update -> State or props of a component changes
+    a-render
+    b-componentDidUpdate
+C-Unmount: Component removed from the DOM
+    a- componentWillUnmount
