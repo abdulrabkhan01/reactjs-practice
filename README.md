@@ -223,5 +223,28 @@ BETTER approach -> Pass the inline wrapper function directly as below
 
 Note: The key attribute was set in the li tag as react want all elements to be unique
 
+Two Ways of creating the components
+------------------------------------
+1- Using class
+    class MyComponent extends Component {
+      render() {
+        return(
+            <div>
+            </div>
+        );
+      }
+
+    }
+2- Stateless functional components
+    import './App.css';
+
+function App() {
+  return (
+    <div>
+      <h1> Hello Ark </h1>
+    </div>
+  );
+}
+
 Q1- When to extend ReactJS.Component? Just complete full youtube course and then we will think.
 
