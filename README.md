@@ -93,6 +93,7 @@ App (Rendered directly into single HTML page using ReactDOM.createRoot)
  Passing data to component
  --------------------------
  props (Key value pairs are used to pass data to the child component from the root app component)
+ Note: These values are immutable, we cannot assign them directly in the code.
 
  Virtual DOM in react
  --------------------
@@ -112,7 +113,7 @@ App (Rendered directly into single HTML page using ReactDOM.createRoot)
 Unlike angular where we have *ngFor there is no equivalent construct in react, instead
 we need to use map operation as shown in the below example
 
-Class Xyz extends Component {
+class Xyz extends Component {
   myState= {
     cnt: 0,
     values: ['val1','val2','val3','val4']
@@ -122,14 +123,105 @@ Class Xyz extends Component {
     return (
       <div>
           <ul>
-            { this.myState.values.map( val => <li>{val}</li>) }
+            { this.myState.values.map( val => <li key={val}>{val}</li>) }
           </ul>
       </div>
 
     );
   }
 
+  handleClickEvent() {
+
+  }
+
 }
+
+How to conditionally render the content
+---------------------------------------
+As ReactJS does not provide templating engine so we need to use our own logic to render components conditionally
+
+<div>
+  {this.myState.values.length===0 && "Please create a new value"}
+</div>
+
+Handling Events
+-----------------
+Use the event methods names in camelNotation like onClick, onBlur etc. & call the appropriate handler function
+<button>
+  onClick={this.handleClickEvent}
+</button>
+
+Binding Event Handlers
+----------------------
+In the event method the access is not available for the object state, you cannot use 'this' keyword inside
+the event handler method, you need to call the bind method of the function from the constructor and pass
+the value of 'this' instance there
+
+For Example:
+
+class Xyz extends Component {
+  myState= {
+    cnt: 0,
+    values: ['val1','val2','val3','val4']
+  };
+
+ constructor() {
+   super();
+   this.handleClickEvent = this.handleClickEvent.bind(this);
+   //now this keyword can be used inside handleClickEvent method
+ }
+  render() {
+    return (
+      <div>
+          <ul>
+            { this.myState.values.map( val => <li key={val}>{val}</li>) }
+          </ul>
+      </div>
+
+    );
+  }
+
+  handleClickEvent() {
+    console.log(this)
+  }
+
+Another alternative way of using this keyword inside the event handler -> Use the arrow function
+handleClickEvent = () => {
+  console.log(this);
+};
+
+
+Updating the State
+-------------------
+The below code does not work in react for changing the state
+this.myState.cnt++; //This will not update the state 
+
+Use setState method as shown below
+
+handleClickEvent = () => {
+  this.setState({cnt: this.myState.cnt+1});
+
+};
+
+Passing arguements to the Event Functions
+-----------------------------------------
+Create a wrapper method
+//Actual Method
+handleEvent = item => {
+  console.log(item);
+}
+
+doHandleEvent = () => {
+  this.handleEvent({id:1});
+}
+
+<button onClick={this.doHandleEvent()}/>
+
+BETTER approach -> Pass the inline wrapper function directly as below
+<button onClick={() => {  this.handleEvent({id:1});}}/>
+
+
+Note: The key attribute was set in the li tag as react want all elements to be unique
 
 Q1- When to extend ReactJS.Component? Just complete full youtube course and then we will think.
 
