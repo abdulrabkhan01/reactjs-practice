@@ -93,3 +93,43 @@ App (Rendered directly into single HTML page using ReactDOM.createRoot)
  Passing data to component
  --------------------------
  props (Key value pairs are used to pass data to the child component from the root app component)
+
+ Virtual DOM in react
+ --------------------
+ Most of the JS fremeworks rely to update the browser DOM, but it is time consuming operations, for creating Fast User interfaces, the concept of Virtual DOM is used in React
+ For every DOM object there is there is corresponding lightweight virtual dom object in reacjs.
+ It is faster to manipulate virtual DOM instead of the real DOM
+
+ React maintains the Virtual DOM snapshots and uses it to compare the changes, once difference are identified then React modifies only the changed Object in Real DOM, thus making it much faster than other frameworks.
+
+  Why React is Called as React?
+  -------------------------------
+  When using react we don't need to manipulate DOM elements directly neither need to add even handlers, all these stuff are taken care by React implicitly. We just update the state of the components and react will
+  automatically do the stuff for updating the DOM elements. So REACT JS actually React to these changes in the components, that reason it is called as REACT JS :)
+
+ Looping through elements in React
+ -----------------------------------
+Unlike angular where we have *ngFor there is no equivalent construct in react, instead
+we need to use map operation as shown in the below example
+
+Class Xyz extends Component {
+  myState= {
+    cnt: 0,
+    values: ['val1','val2','val3','val4']
+  };
+
+  render() {
+    return (
+      <div>
+          <ul>
+            { this.myState.values.map( val => <li>{val}</li>) }
+          </ul>
+      </div>
+
+    );
+  }
+
+}
+
+Q1- When to extend ReactJS.Component? Just complete full youtube course and then we will think.
+
